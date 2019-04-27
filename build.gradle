@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'com.herb2sy'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+artifacts {
+    archives sourcesJar
+}
+task deploy {
+    doLast {
+
+
+
+    }
+}
