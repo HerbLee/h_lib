@@ -51,12 +51,12 @@ public class ServiceResult<T> implements Serializable {
         return new ServiceResult<T>(200,"访问成功");
     }
     public static <T> ServiceResult<T> createBySuccess(T data){
-        return new ServiceResult<T>(200,"访问成功" data);
+        return new ServiceResult<T>(200,"访问成功", data);
     }
     public static <T> ServiceResult<T> loginSuccess(HttpServletResponse response,T data){
 
         response.setStatus(HttpServletResponse.SC_CREATED);
-        return new ServiceResult<T>(201,登录成功"",data);
+        return new ServiceResult<T>(201,"登录成功",data);
     }
 
     public static <T> ServiceResult<T> createBySuccess(String msg, T data){
