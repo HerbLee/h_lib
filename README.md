@@ -2,6 +2,9 @@
 
 > javadoc 会在整理出2.0版本后上传
 
+[![](https://www.jitpack.io/v/HerbLee/h_lib_java.svg)](https://www.jitpack.io/#HerbLee/h_lib_java)
+
+
 ## 使用方式
 
 ### gradle方式
@@ -18,7 +21,7 @@
 > 第二步
   
     dependencies {
-	        implementation 'com.github.HerbLee:h_lib_java:1.0.1'
+	        implementation 'com.github.HerbLee:h_lib_java:1.1.4'
 	  }
     
     
