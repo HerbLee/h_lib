@@ -1,5 +1,5 @@
-package cn.artviewer.pay.common.response;
-
+    
+package com.herb2sy.utils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
