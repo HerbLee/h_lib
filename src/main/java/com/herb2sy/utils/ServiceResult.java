@@ -41,34 +41,34 @@ public class ServiceResult<T> implements Serializable {
 
     @JsonIgnore
     public boolean isSuccesss(){
-        return this.code == ResultCode.SUCCESS.getCode();
+        return this.code == 200;
     }
 
     public static <T> ServiceResult<T> createBySuccess(){
-        return new ServiceResult<T>(ResultCode.SUCCESS.getCode());
+        return new ServiceResult<T>(200);
     }
     public static <T> ServiceResult<T> createBySuccess(String message){
-        return new ServiceResult<T>(ResultCode.SUCCESS.getCode(), message);
+        return new ServiceResult<T>(200,"访问成功");
     }
     public static <T> ServiceResult<T> createBySuccess(T data){
-        return new ServiceResult<T>(ResultCode.SUCCESS.getCode(),ResultCode.LOGINSUCCESS.getDesc(), data);
+        return new ServiceResult<T>(200,"访问成功" data);
     }
     public static <T> ServiceResult<T> loginSuccess(HttpServletResponse response,T data){
 
         response.setStatus(HttpServletResponse.SC_CREATED);
-        return new ServiceResult<T>(ResultCode.LOGINSUCCESS.getCode(),ResultCode.LOGINSUCCESS.getDesc(),data);
+        return new ServiceResult<T>(201,登录成功"",data);
     }
 
     public static <T> ServiceResult<T> createBySuccess(String msg, T data){
-        return new ServiceResult<T>(ResultCode.SUCCESS.getCode(), msg, data);
+        return new ServiceResult<T>(200, msg, data);
     }
 
     public static <T> ServiceResult<T> createByError(HttpServletResponse response,String msg){
         response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-        return new ServiceResult<T>(ResultCode.ERROR.getCode(),msg);
+        return new ServiceResult<T>(200,msg);
     }
     public static <T> ServiceResult<T> createByError(String msg){
-        return new ServiceResult<T>(ResultCode.ERROR.getCode(),msg);
+        return new ServiceResult<T>(400,msg);
     }
 
     public static <T> ServiceResult<T> createByError(HttpServletResponse response, int code, String msg){
@@ -78,12 +78,12 @@ public class ServiceResult<T> implements Serializable {
 
     public static <T> ServiceResult<T> createByException(HttpServletResponse response, String msg){
         response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-        return new ServiceResult<T>(ResultCode.EXCEPTION.getCode(),msg);
+        return new ServiceResult<T>(500,msg);
     }
 
     public static <T> ServiceResult<T> createByToken(HttpServletResponse response){
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        return new ServiceResult<T>(ResultCode.TOKEN_TIMEOUT.getCode(),ResultCode.TOKEN_TIMEOUT.getDesc());
+        return new ServiceResult<T>(401,"登录已过期请重新登陆");
     }
 
 }
