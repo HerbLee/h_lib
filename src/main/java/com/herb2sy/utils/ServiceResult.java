@@ -14,7 +14,6 @@ import lombok.Data;
  * @date: Created on 2019/8/5 12:06
  * @function: 服务端返回类型
  */
-@Data
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class ServiceResult<T> implements Serializable {
 
