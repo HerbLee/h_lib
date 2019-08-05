@@ -21,7 +21,7 @@
 > 第二步
   
     dependencies {
-	        implementation 'com.github.HerbLee:h_lib_java:1.1.4'
+	        implementation 'com.github.HerbLee:h_lib_java:xxx'//上边绿标版本
 	  }
     
     
