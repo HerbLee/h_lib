@@ -1,4 +1,3 @@
-package cn.artviewer.pay.common.response;
 
 import lombok.Getter;
 
