@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 import javax.servlet.http.HttpServletResponse;
 
-import lombok.Data;
 
 /**
  * @author: HerbLee
